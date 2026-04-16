@@ -19,7 +19,7 @@ public class App {
         System.out.println("==== 자바 CLI 서비스 만들기 ====");
 
         systemController.bootSystem();
-
+        inventoryController.loadFromFile();
 
         while (running) {
             System.out.print("명령어 입력  : ");
@@ -31,13 +31,12 @@ public class App {
                 case "입고" -> inventoryController.inputItem();
                 case "출고" -> inventoryController.outputItem();
                 case "목록" -> inventoryController.printList();
-                case "저장" -> inventoryController.saveToFile();
-                case "로드" -> inventoryController.loadFromFile();
                 case "수정" -> inventoryController.modifyItem(rq);
                 case "삭제" -> inventoryController.deleteItem(rq);
                 case "유통기한" -> inventoryController.checkExpiry();
                 case "경고" -> inventoryController.checkMinStock();
                 case "종료" -> {
+                    inventoryController.saveToFile();
                     systemController.exit(running);
                     return;
                 }

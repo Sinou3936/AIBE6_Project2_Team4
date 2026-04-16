@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "Product_name": "코카콜라",
+    "Product_quantity": 50,
+    "Product_expiryDate": "2026-12-31",
+    "Product_minStock": 10,
+    "Product_category": "음료",
+    "Product_price": 1500
+  },
+  {
+    "id": 2,
+    "Product_name": "펩시콜라",
+    "Product_quantity": 30,
+    "Product_expiryDate": "2026-11-30",
+    "Product_minStock": 10,
+    "Product_category": "음료",
+    "Product_price": 1400
+  },
+  {
+    "id": 3,
+    "Product_name": "제로콜라",
+    "Product_quantity": 40,
+    "Product_expiryDate": "2026-10-31",
+    "Product_minStock": 10,
+    "Product_category": "음료",
+    "Product_price": 1600
+  },
+  {
+    "id": 4,
+    "Product_name": "포카리스웨트",
+    "Product_quantity": 25,
+    "Product_expiryDate": "2026-09-30",
+    "Product_minStock": 5,
+    "Product_category": "음료",
+    "Product_price": 1800
+  },
+  {
+    "id": 5,
+    "Product_name": "비타500",
+    "Product_quantity": 60,
+    "Product_expiryDate": "2026-08-31",
+    "Product_minStock": 15,
+    "Product_category": "음료",
+    "Product_price": 500
+  },
+  {
+    "id": 6,
+    "Product_name": "새우깡",
+    "Product_quantity": 35,
+    "Product_expiryDate": "2026-07-31",
+    "Product_minStock": 10,
+    "Product_category": "과자",
+    "Product_price": 1500
+  },
+  {
+    "id": 7,
+    "Product_name": "포카칩",
+    "Product_quantity": 20,
+    "Product_expiryDate": "2026-06-30",
+    "Product_minStock": 5,
+    "Product_category": "과자",
+    "Product_price": 1800
+  },
+  {
+    "id": 8,
+    "Product_name": "오레오",
+    "Product_quantity": 15,
+    "Product_expiryDate": "2026-04-18",
+    "Product_minStock": 5,
+    "Product_category": "과자",
+    "Product_price": 2000
+  },
+  {
+    "id": 9,
+    "Product_name": "꼬깔콘",
+    "Product_quantity": 8,
+    "Product_expiryDate": "2026-04-16",
+    "Product_minStock": 10,
+    "Product_category": "과자",
+    "Product_price": 1500
+  },
+  {
+    "id": 10,
+    "Product_name": "빼빼로",
+    "Product_quantity": 45,
+    "Product_expiryDate": "2026-05-31",
+    "Product_minStock": 10,
+    "Product_category": "과자",
+    "Product_price": 1200
+  },
+  {
+    "id": 11,
+    "Product_name": "신라면",
+    "Product_quantity": 100,
+    "Product_expiryDate": "2026-12-31",
+    "Product_minStock": 20,
+    "Product_category": "라면",
+    "Product_price": 850
+  },
+  {
+    "id": 12,
+    "Product_name": "진라면",
+    "Product_quantity": 80,
+    "Product_expiryDate": "2026-11-30",
+    "Product_minStock": 20,
+    "Product_category": "라면",
+    "Product_price": 800
+  },
+  {
+    "id": 13,
+    "Product_name": "불닭볶음면",
+    "Product_quantity": 60,
+    "Product_expiryDate": "2026-10-31",
+    "Product_minStock": 15,
+    "Product_category": "라면",
+    "Product_price": 1500
+  },
+  {
+    "id": 14,
+    "Product_name": "짜파게티",
+    "Product_quantity": 70,
+    "Product_expiryDate": "2026-09-30",
+    "Product_minStock": 15,
+    "Product_category": "라면",
+    "Product_price": 900
+  },
+  {
+    "id": 15,
+    "Product_name": "삼각김밥",
+    "Product_quantity": 5,
+    "Product_expiryDate": "2026-04-15",
+    "Product_minStock": 10,
+    "Product_category": "냉장",
+    "Product_price": 1200
+  },
+  {
+    "id": 16,
+    "Product_name": "참치마요",
+    "Product_quantity": 7,
+    "Product_expiryDate": "2026-04-14",
+    "Product_minStock": 10,
+    "Product_category": "냉장",
+    "Product_price": 1300
+  },
+  {
+    "id": 17,
+    "Product_name": "불고기버거",
+    "Product_quantity": 3,
+    "Product_expiryDate": "2026-04-17",
+    "Product_minStock": 5,
+    "Product_category": "냉장",
+    "Product_price": 3500
+  },
+  {
+    "id": 18,
+    "Product_name": "핫도그",
+    "Product_quantity": 10,
+    "Product_expiryDate": "2026-04-20",
+    "Product_minStock": 5,
+    "Product_category": "냉장",
+    "Product_price": 2000
+  },
+  {
+    "id": 19,
+    "Product_name": "바나나우유",
+    "Product_quantity": 20,
+    "Product_expiryDate": "2026-04-30",
+    "Product_minStock": 10,
+    "Product_category": "냉장",
+    "Product_price": 1500
+  },
+  {
+    "id": 20,
+    "Product_name": "딸기우유",
+    "Product_quantity": 15,
+    "Product_expiryDate": "2026-04-25",
+    "Product_minStock": 10,
+    "Product_category": "냉장",
+    "Product_price": 1500
+  },
+  {
+    "id": 21,
+    "Product_name": "칫솔",
+    "Product_quantity": 25,
+    "Product_expiryDate": "2027-12-31",
+    "Product_minStock": 5,
+    "Product_category": "생활용품",
+    "Product_price": 2000
+  },
+  {
+    "id": 22,
+    "Product_name": "치약",
+    "Product_quantity": 20,
+    "Product_expiryDate": "2027-12-31",
+    "Product_minStock": 5,
+    "Product_category": "생활용품",
+    "Product_price": 3000
+  },
+  {
+    "id": 23,
+    "Product_name": "샴푸",
+    "Product_quantity": 10,
+    "Product_expiryDate": "2027-06-30",
+    "Product_minStock": 3,
+    "Product_category": "생활용품",
+    "Product_price": 8000
+  },
+  {
+    "id": 24,
+    "Product_name": "마스크",
+    "Product_quantity": 50,
+    "Product_expiryDate": "2027-12-31",
+    "Product_minStock": 20,
+    "Product_category": "생활용품",
+    "Product_price": 1000
+  },
+  {
+    "id": 25,
+    "Product_name": "핫팩",
+    "Product_quantity": 3,
+    "Product_expiryDate": "2026-12-31",
+    "Product_minStock": 10,
+    "Product_category": "생활용품",
+    "Product_price": 1500
+  },
+  {
+    "id": 26,
+    "Product_name": "껌",
+    "Product_quantity": 40,
+    "Product_expiryDate": "2026-08-31",
+    "Product_minStock": 10,
+    "Product_category": "과자",
+    "Product_price": 500
+  },
+  {
+    "id": 27,
+    "Product_name": "아메리카노",
+    "Product_quantity": 30,
+    "Product_expiryDate": "2026-04-19",
+    "Product_minStock": 10,
+    "Product_category": "음료",
+    "Product_price": 2000
+  },
+  {
+    "id": 28,
+    "Product_name": "카페라떼",
+    "Product_quantity": 25,
+    "Product_expiryDate": "2026-04-21",
+    "Product_minStock": 10,
+    "Product_category": "음료",
+    "Product_price": 2500
+  },
+  {
+    "id": 29,
+    "Product_name": "에너지바",
+    "Product_quantity": 15,
+    "Product_expiryDate": "2026-06-30",
+    "Product_minStock": 5,
+    "Product_category": "과자",
+    "Product_price": 1500
+  },
+  {
+    "id": 30,
+    "Product_name": "두유",
+    "Product_quantity": 20,
+    "Product_expiryDate": "2026-05-15",
+    "Product_minStock": 10,
+    "Product_category": "냉장",
+    "Product_price": 1200
+  }
+]

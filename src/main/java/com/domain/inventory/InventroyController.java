@@ -104,14 +104,9 @@ public class InventroyController {
     }
 
     public void loadFromFile(){
-        System.out.print("현재 데이터가 사라집니다. 계속하시겠습니까? (y/n): ");
-        String confirm = scanner.nextLine().trim();
-        if (!confirm.equals("y")) return;
-        else {
-            System.out.println("재고 목록 로드...");
-            inventoryService.loadFromFile();
-            System.out.println("재고 목록 로드 완료...");
-        }
+        System.out.println("재고 목록 로드...");
+        inventoryService.loadFromFile();
+        System.out.println("재고 목록 로드 완료...");
     }
 
     public void modifyItem(Rq rq){

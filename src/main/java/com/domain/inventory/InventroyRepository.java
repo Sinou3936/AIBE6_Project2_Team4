@@ -1,19 +1,37 @@
 package com.domain.inventory;
 
+import com.google.gson.GsonBuilder;
+import com.google.gson.TypeAdapter;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import org.project.Item;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.PrintWriter;
+import java.io.*;
+import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.gson.Gson;
 
 public class InventroyRepository {
     private ArrayList<Item> inventory = new ArrayList<>();
     private int nextId = 1;
+    private final Gson gson = new GsonBuilder()
+            .registerTypeAdapter(LocalDate.class, new TypeAdapter<LocalDate>(){
+                @Override
+                public void write(JsonWriter jsonWriter, LocalDate localDate) throws IOException {
+                    jsonWriter.value(localDate.toString());
+                }
+
+                @Override
+                public LocalDate read(JsonReader jsonReader) throws IOException {
+                    return LocalDate.parse(jsonReader.nextString());
+                }
+            })
+            .setPrettyPrinting()
+            .create();
 
     public void save(Item item)
     {
@@ -43,38 +61,57 @@ public class InventroyRepository {
     }
 
     public void saveFile(){
-        try(PrintWriter pw = new PrintWriter("inventory.txt")) {
-            inventory.stream()
-                    .forEach(item -> pw.println("%05d | %s | %d | %s | %d | %s | %d"
-                            .formatted(item.getId(), item.getProduct_name(), item.getProduct_quantity()
-                                    ,item.getProduct_category(), item.getProduct_price(), item.getProduct_expiryDate(), item.getProduct_minStock()
-                            )));
-            pw.flush();
+//        try(PrintWriter pw = new PrintWriter("inventory.json")) {
+//            inventory.stream()
+//                    .forEach(item -> pw.println("%05d | %s | %d | %s | %d | %s | %d"
+//                            .formatted(item.getId(), item.getProduct_name(), item.getProduct_quantity()
+//                                    ,item.getProduct_category(), item.getProduct_price(), item.getProduct_expiryDate(), item.getProduct_minStock()
+//                            )));
+//            pw.flush();
+//        }catch (FileNotFoundException e) {
+//            System.out.println("파일을 찾을 수 없습니다.");
+//        }
+        try(Writer writer = new FileWriter("inventory.json")) {
+            gson.toJson(inventory, writer);
         }catch (FileNotFoundException e) {
             System.out.println("파일을 찾을 수 없습니다.");
+        }catch(IOException e){
+            System.out.println("파일을 저장하는 중 오류가 발생했습니다.");
         }
     }
     public void loadFile(){
         inventory.clear();
-        try (BufferedReader br = new BufferedReader(new FileReader("inventory.txt"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] parts = line.split("\\|");
-                if (parts.length == 7) {
-                    int id = Integer.parseInt(parts[0].trim());
-                    String name = parts[1].trim();
-                    int quantity = Integer.parseInt(parts[2].trim());
-                    String category = parts[3].trim();
-                    int price =Integer.parseInt(parts[4].trim());
-                    LocalDate expiryDate = LocalDate.parse(parts[5].trim());
-                    int minStock = Integer.parseInt(parts[6].trim());
-                    inventory.add(new Item(id, name, quantity, category,price,expiryDate,minStock));
-                    nextId = Math.max(nextId, id + 1);
-                }
+//        try (BufferedReader br = new BufferedReader(new FileReader("inventory.json"))) {
+//            String line;
+//            while ((line = br.readLine()) != null) {
+//                String[] parts = line.split("\\|");
+//                if (parts.length == 7) {
+//                    int id = Integer.parseInt(parts[0].trim());
+//                    String name = parts[1].trim();
+//                    int quantity = Integer.parseInt(parts[2].trim());
+//                    String category = parts[3].trim();
+//                    int price =Integer.parseInt(parts[4].trim());
+//                    LocalDate expiryDate = LocalDate.parse(parts[5].trim());
+//                    int minStock = Integer.parseInt(parts[6].trim());
+//                    inventory.add(new Item(id, name, quantity, category,price,expiryDate,minStock));
+//                    nextId = Math.max(nextId, id + 1);
+//                }
+//            }
+//        } catch (FileNotFoundException e) {
+//            System.out.println("파일을 찾을 수 없습니다.");
+//        } catch (Exception e) {
+//            System.out.println("파일을 읽는 중 오류가 발생했습니다.");
+//        }
+        try(Reader reader = new FileReader("inventory.json")) {
+            Type listType = new TypeToken<ArrayList<Item>>(){}.getType();
+            ArrayList<Item> loaded = gson.fromJson(reader, listType);
+            if(loaded != null){
+                inventory = loaded;
+                nextId = inventory.stream().mapToInt(Item::getId).max().orElse(0) + 1;
             }
-        } catch (FileNotFoundException e) {
+        }catch (FileNotFoundException e) {
             System.out.println("파일을 찾을 수 없습니다.");
-        } catch (Exception e) {
+        }catch (IOException e){
             System.out.println("파일을 읽는 중 오류가 발생했습니다.");
         }
     }
